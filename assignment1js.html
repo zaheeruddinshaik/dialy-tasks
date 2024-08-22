@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //multiplication
+    let num1=5
+        for(let s=1;s<=10;s++){
+            let result=num1*s
+        console.log(num1+'x'+s+'='+result) 
+    }
+
+    // sum of even numbers between 1 and 50 
+    let sum = 0;
+    for (let i=2;i<=50;i+=2) {
+    sum +=i;
+    } 
+    console.log("Sum of all even numbers between 1 and 50 :", sum);
+
+
+
+    //prime numbers between 2 to 20
+    let l= 2;
+   while (l <= 20) {
+   let guess= true;
+   for (let i = 2; i <= Math.sqrt(l); i++) {
+    if (l % i == 0) {
+      guess = false;
+      break;
+    }
+  }
+  if (guess) {
+    console.log(l);
+  }
+  l++;
+  }
+
+
+
+//  Sum of all Odd Numbers Between 1 and 20
+let o = 0;
+let number = 1;
+
+while (number <= 20) {
+  o += number;
+  number += 2;
+}
+
+console.log("Sum of odd numbers between 1 and 20 :", o);
+
+
+
+//Factorial Calculation
+function factorial(num5) {
+  let result = 1;
+  while (num5 > 0) {
+    result *= num5;
+    num5--;
+  }
+  return result;
+}
+let number5 = 5;
+let factorialResult = factorial(number5);
+console.log("Factorial of " + number5 + ":", factorialResult);
+
+
+</script>
+</html>

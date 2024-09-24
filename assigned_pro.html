@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<style>
+    /* dynamic rating with JS */
+   
+    .bi-star-fill{
+        color: gold;
+        size: 5rem;
+    }
+    .container1{
+        border: 1px solid black;
+        height: 100px;
+        width: 300px;
+        align-items: center;
+        text-align: center;
+        padding-top: 30px;
+        margin-left: 580px;
+        margin-bottom: 50px;
+
+    }
+    .bi-star{
+        font-size: 3rem;
+    
+    }
+    h1{
+        color: rgb(91, 9, 9);
+        text-align: center;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+
+
+     /* ----------- */
+
+
+       /* Bmi Calculator */
+       body {
+        margin-top: 100px;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: beige;
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 100px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            width: 200px;
+            padding: 10px;
+            background-color: #670d4c;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 4px;
+            margin-left: 100px;
+        }
+
+        button:hover {
+            background-color: #516b88;
+            box-shadow: #215888;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        .result span {
+            font-weight: bold;
+        }
+
+
+         /* Toggle button */
+         body {
+            transition: background-color 0.5s ease;
+        }
+
+        #btn {
+            padding: 5px;
+            height: 100px;
+            width: 300px;
+            font-size: 20px;
+            border-radius: 200px;
+            cursor: pointer;
+            background-color: rgb(119, 188, 23);
+            color: rgb(18, 6, 6);
+            border: none;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        #btn:hover {
+            background-color: rgb(242, 31, 193);
+            transform: scale(1.05); 
+        }
+
+        .dark-theme {
+            background-color: rgb(16, 106, 121);
+            color: white;
+        }
+
+        .dark-theme #btn {
+            background-color: rgb(142, 12, 103);
+            color: white;
+        }
+
+        h3 {
+            font-family: Arial, sans-serif;
+        }
+
+        .togglebody {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+          
+        }
+
+        .toggle-outer{
+            margin-top: 100px;
+            border: 1px solid rgb(221, 1, 181);   
+        }
+        /* ------------------------ */
+
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #215888;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background-color:lavender;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .faq-question {
+            cursor: pointer;
+            padding: 10px 0;
+        }
+
+        .faq-answer {
+            display: none;
+            padding: 10px 0;
+            border-top: 1px solid #ddd;
+        }
+
+    
+
+
+</style>
+
+<h1>GIVE YOUR RATEINGS</h1>
+<div class="container1">
+<i class="bi-star" id="myDIV1" onclick="myFunction(1)"></i>
+<i class="bi-star" id="myDIV2" onclick="myFunction(2)"></i>
+<i class="bi-star" id="myDIV3" onclick="myFunction(3)"></i>
+<i class="bi-star" id="myDIV4" onclick="myFunction(4)"></i>
+<i class="bi-star" id="myDIV5" onclick="myFunction(5)"></i>
+</div>
+    <!-- ------------------------------ -->
+
+
+     <!-- BMI CALCULATOR USING JS -->
+    <div class="container">
+        <h2>BMI Calculator</h1>
+        <label for="weight">Weight </label>
+        <input type="number" id="weight" placeholder="Enter your weight">
+
+        <label for="height">Height</label>
+        <input type="number" id="height" placeholder="Enter your height">
+
+        <button onclick="calculateBMI()">Calculate BMI</button>
+
+        <div class="result" id="bmiResult"></div>
+    </div> <br><br><br>
+    <!-- ----------------------------------------- -->
+
+    <!-- toggle button  -->
+     <div class="toggle-outer">
+    <div class="togglebody">
+        <button id="btn">Toggle On</button>
+    </div>
+</div> 
+    <!-- ------------------ -->
+
+    <!-- faq -->
+    <div class="faq-container">
+        <h2>FAQ QUESTIONS</h2>
+        
+        <div class="faq-item">
+            <h3 class="faq-question">What are consitional statements in javascript?</h3>
+            <p class="faq-answer">Conditional statements control behavior in JavaScript and determine whether or not pieces of code can run. There are multiple different types of conditionals in JavaScript including: “If” statements: where if a condition is true it is used to specify execution for a block of code..</p>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-question">What are loops in javscript??</h3>
+            <p class="faq-answer">In computer programming, a loop is a sequence of instruction s that is continually repeated until a certain condition is reached. Typically, a certain process is done, such as getting an item of data and changing it, and then some condition is checked such as whether a counter has reached a prescribed number..</p>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-question">What are function in javascript?</h3>
+            <p class="faq-answer">A function in JavaScript is similar to a procedure—a set of statements that performs a task or calculates a value, but for a procedure to qualify as a function, it should take some input and return an output where there is some obvious relationship between the input and the output..</p>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-question">What is meant by oops in javascript?</h3>
+            <p class="faq-answer">Object-oriented programming (OOP) is a computer programming model that organizes software design around objects instead of functions and logic. In JavaScript, OOP is implemented using prototypal inheritance, which involves linking an object to a prototype.</p>
+        </div>
+       
+    </div>
+
+
+
+</body>
+
+<script>
+    //    <!-- dynamic rating with JS -->
+    let prev = 0
+    function myFunction(a) {
+        for (let i=1;i<6;i++){
+            if (a===prev){
+                document.getElementById("myDIV"+i).classList.remove("bi-star-fill");
+                document.getElementById("myDIV"+i).classList.add("bi-star");
+            }
+            else{
+                if(i<=a){
+                    document.getElementById("myDIV"+i).classList.remove("bi-star");
+                    document.getElementById("myDIV"+i).classList.add("bi-star-fill");
+                }
+                else{
+                    document.getElementById("myDIV"+i).classList.remove("bi-star-fill");
+                    document.getElementById("myDIV"+i).classList.add("bi-star");
+                }  
+            }
+        } 
+        if(a==prev)
+            prev=0
+        else
+            prev = a
+    }
+    // =========================================================================//
+
+
+    // <!-- BMI CALCULATOR USING JS -->
+    function calculateBMI() {
+            const weight = parseFloat(document.getElementById('weight').value);
+            const height = parseFloat(document.getElementById('height').value) / 100; 
+
+            if (isNaN(weight) || isNaN(height)) {
+                document.getElementById('bmiResult').textContent = "Please enter valid numbers.";
+                return;
+            }
+
+            const bmi = (weight / (height * height)).toFixed(2);
+
+            document.getElementById('bmiResult').innerHTML =` Your BMI is ${bmi}`;
+        }
+        // ------------------------------------------------------------------------//
+    
+
+          // toggle button
+          const button = document.getElementById('btn'); 
+        const bodyElement = document.querySelector('.toggle-outer');//we can take body also for all size
+       
+        button.addEventListener('click', function () {
+            bodyElement.classList.toggle('dark-theme');
+
+            if (bodyElement.classList.contains('dark-theme')) {
+                button.textContent = 'TOGGLE OFF';
+            } else {
+                button.textContent = 'TOGGLE ON';
+            }
+        });
+        // ----------------------------------------------//
+
+        //faq//
+        document.addEventListener("DOMContentLoaded", () => {
+    const faqItems = document.querySelectorAll(".faq-question");
+
+    faqItems.forEach(item => {
+        item.addEventListener("click", () => {
+            const answer = item.nextElementSibling;
+            answer.style.display = answer.style.display === "block" ? "none" : "block";
+        });
+    });
+});
+
+
+
+</script>
+
+
+
+</html>
